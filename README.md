@@ -1,9 +1,7 @@
 # README
-Live site: https://a-a-test.herokuapp.com/admin/login
+Live site: https://a-a-test.herokuapp.com/admin/lines/import
 
-* email: admin@example.com, password: password
-
-* https://a-a-test.herokuapp.com/admin/lines/import
+* `email: admin@example.com, password: password`
 
 * Upload a CSV (only CSVs with 26 columns or less are supported)
 
@@ -11,18 +9,18 @@ Live site: https://a-a-test.herokuapp.com/admin/login
 
 To run locally:
 
-* Git clone https://github.com/haydenlinder/active_admin_test.git
+* `git clone https://github.com/haydenlinder/active_admin_test.git`
 
-* bundle install
+* `bundle install`
 
-* rails db:create
+* `rails db:create`
 
-* rails db:setup
+* `rails db:setup`
 
-* rails s
+* `rails s`
 
-* http://localhost:3000/admin/login
+* http://localhost:3000/admin/lines/import
 
-* login -> email: admin@example.com, password: password
+* `email: admin@example.com, password: password`
 
 * Upload a CSV (only CSVs with 26 columns or less are supported)
