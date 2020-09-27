@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To get up and running:
 
-Things you may want to cover:
+* Git clone https://github.com/haydenlinder/active_admin_test.git
 
-* Ruby version
+* bundle install
 
-* System dependencies
+* rails db:setup
 
-* Configuration
+* rails s
 
-* Database creation
+* http://localhost:3000/admin/ -> import lines
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Upload a CSV (only CSVs with 26 columns or less are supported)
