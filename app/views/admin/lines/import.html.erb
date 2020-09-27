@@ -1,0 +1,12 @@
+<%= form_with(url: '/admin/lines/read_file', local: true, method: "POST") do |form| %>
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field(:file, accept: '.csv') %>
+  </div>
+  <% if notice %>
+  <div id="notice"><% notice %></div>
+  <% end %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

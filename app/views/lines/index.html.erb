@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+      <th>G</th>
+      <th>H</th>
+      <th>I</th>
+      <th>J</th>
+      <th>K</th>
+      <th>L</th>
+      <th>M</th>
+      <th>N</th>
+      <th>O</th>
+      <th>P</th>
+      <th>Q</th>
+      <th>R</th>
+      <th>S</th>
+      <th>T</th>
+      <th>U</th>
+      <th>V</th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lines.each do |line| %>
+      <tr>
+        <td><%= line.a %></td>
+        <td><%= line.b %></td>
+        <td><%= line.c %></td>
+        <td><%= line.d %></td>
+        <td><%= line.e %></td>
+        <td><%= line.f %></td>
+        <td><%= line.g %></td>
+        <td><%= line.h %></td>
+        <td><%= line.i %></td>
+        <td><%= line.j %></td>
+        <td><%= line.k %></td>
+        <td><%= line.l %></td>
+        <td><%= line.m %></td>
+        <td><%= line.n %></td>
+        <td><%= line.o %></td>
+        <td><%= line.p %></td>
+        <td><%= line.q %></td>
+        <td><%= line.r %></td>
+        <td><%= line.s %></td>
+        <td><%= line.t %></td>
+        <td><%= line.u %></td>
+        <td><%= line.v %></td>
+        <td><%= line.w %></td>
+        <td><%= line.x %></td>
+        <td><%= line.y %></td>
+        <td><%= line.z %></td>
+        <td><%= link_to 'Show', line %></td>
+        <td><%= link_to 'Edit', edit_line_path(line) %></td>
+        <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Line', new_line_path %>
+
+
