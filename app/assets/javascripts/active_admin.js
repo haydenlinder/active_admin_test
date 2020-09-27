@@ -1,5 +1,5 @@
 //= require active_admin/base
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('titlebar_right').firstElementChild
     let inner = container.innerHTML + '<span class="action_item"> <a href="/admin/lines/import">Import Lines</a></span>'
     container.innerHTML = inner;
