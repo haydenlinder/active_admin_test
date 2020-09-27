@@ -21,7 +21,7 @@ ActiveAdmin.register Line do
   columns = [*('a'..'z')]
   collection_action :read_file, method: :post do 
     if !params[:file]
-      return redirect_back fallback_location: '/admin/lines/impoer', notice: 'Please upload a file.'
+      return redirect_back fallback_location: '/admin/lines/import', notice: 'Please upload a file.'
     end
     data = CSV.parse(File.read(params[:file].path))
     data.each do |row|
