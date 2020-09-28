@@ -17,25 +17,21 @@ ActiveAdmin.register Line do
     # render import view
   end
 
-  require 'csv'
-  columns = [*('a'..'z')]
   collection_action :read_file, method: :post do 
     if !params[:file]
       return redirect_back fallback_location: '/admin/lines/import', notice: 'Please upload a file.'
     end
-    data = CSV.parse(File.read(params[:file].path))
-    data.each do |row|
-      if row.length > 26 
+    begin
+      if import_file(params[:file])
+        redirect_to '/admin/lines', notice: 'Successfully imported data from CSV'
+      else
         error = 'The CSV file has too many columns. Please use a file with no more than 26 columns.'
         return redirect_back fallback_location: '/admin/lines/import', notice: error
       end
-      l_params = {}
-      row.each_with_index do |datum, i|
-        l_params[columns[i]] = datum
-      end
-      Line.create(l_params)
+    rescue
+      return redirect_back fallback_location: '/admin/lines/import', notice: 'An error occurred while uploading the file. Please try another file or contact support.'
     end
-    redirect_to '/admin/lines', notice: 'Successfully imported data from CSV'
+    
   end
 
   index do 
@@ -71,4 +67,23 @@ ActiveAdmin.register Line do
   end
 
   
+end
+
+class Admin::LinesController
+  require 'csv'
+  def import_file(file)
+    columns = [*('a'..'z')]
+    data = CSV.parse(File.read(file.path))
+    data.each do |row|
+      if row.length > 26 
+        return false
+      end
+      l_params = {}
+      row.each_with_index do |datum, i|
+        l_params[columns[i]] = datum
+      end
+      Line.create(l_params)
+      true
+    end
+  end
 end
